@@ -8,7 +8,12 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
         title: 'Text fields',
         theme: ThemeData(
-          primaryColor: Color(0xff0175c2),
+          primaryColor: Color(0xFF0175C2),
+          canvasColor: Colors.white,
+          buttonColor: Color(0xFF0175C2),
+          buttonTheme: ButtonThemeData(
+            textTheme: ButtonTextTheme.primary,
+          ),
         ),
         home: HomePage(),
       );

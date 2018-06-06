@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class PasswordField extends StatefulWidget {
   const PasswordField({
+    this.fieldKey,
     this.hintText,
     this.labelText,
     this.helperText,
@@ -10,6 +11,7 @@ class PasswordField extends StatefulWidget {
     this.onFieldSubmitted,
   });
 
+  final Key fieldKey;
   final String hintText;
   final String labelText;
   final String helperText;
@@ -26,10 +28,11 @@ class _PasswordFieldState extends State<PasswordField> {
 
   @override
   Widget build(BuildContext context) => TextFormField(
+        key: widget.fieldKey,
         obscureText: _obscureText,
         maxLength: 8,
-        onSaved: widget.onSaved,
         validator: widget.validator,
+        onSaved: widget.onSaved,
         onFieldSubmitted: widget.onFieldSubmitted,
         decoration: InputDecoration(
           filled: true,
